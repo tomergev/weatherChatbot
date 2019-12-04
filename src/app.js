@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const compression = require('compression')
-require('dotenv').config()
+require('dotenv').config({ path: './.env' })
 
 const routes = require('./routes')
 
