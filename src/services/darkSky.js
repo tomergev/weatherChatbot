@@ -7,7 +7,6 @@ module.exports = ({ lat, lng }) => request({
 	queryParams: {
 		exclude: [
 			'minutely',
-			'hourly',
 			'alerts',
 			'flags',
 			'daily',

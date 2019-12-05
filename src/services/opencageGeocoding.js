@@ -11,3 +11,4 @@ module.exports = (location) => request({
 		key: process.env.OPENCAGE_GEOCODING_API_KEY,
 	}
 })
+
