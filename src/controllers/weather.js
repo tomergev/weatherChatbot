@@ -8,7 +8,17 @@ module.exports = {
 			const locationData = await opencageGeocoding(location)
 			const { lat, lng } = locationData.results[0].geometry
 			const forecast = await darkSky({ lat, lng })
+			console.log('normal route')
 			res.json({ forecast })
+		} catch (err) {
+			next(err)
+		}
+	},
+
+	async dialogFlow(req, res, next) {
+		try {
+			console.log('Dialogflow route')
+			res.json({ message: 'Api is working' })
 		} catch (err) {
 			next(err)
 		}
