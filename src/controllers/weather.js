@@ -17,7 +17,7 @@ module.exports = {
 
 	async dialogFlow(req, res, next) {
 		try {
-			console.log('Dialogflow route')
+			console.log(req)
 			res.json({ message: 'Api is working' })
 		} catch (err) {
 			next(err)
