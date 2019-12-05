@@ -4,7 +4,6 @@ const darkSky = require('../services/darkSky')
 module.exports = {
 	async getWeather(req, res, next) {
 		try {
-			console.log(req)
 			const location  = req.body.queryResult.parameters['geo-city']
 			const locationData = await opencageGeocoding(location)
 			const { lat, lng } = locationData.results[0].geometry
