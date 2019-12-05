@@ -32,5 +32,4 @@ app.listen(process.env.PORT_NUMBER, (err) => {
 	}
 
 	console.log(`Magic happening on port ${process.env.PORT_NUMBER}`)
-}
-)
+})

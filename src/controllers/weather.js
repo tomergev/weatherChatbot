@@ -1,11 +1,14 @@
-const opencageGeocoding = require('../libs/opencageGeocoding')
+const opencageGeocoding = require('../services/opencageGeocoding')
+const darkSky = require('../services/darkSky')
 
 module.exports = {
-	async getDarkSkyForecast(req, res, next) {
+	async get(req, res, next) {
 		try {
-			const { location } = req.params
+			const { location } = req.query
 			const locationData = await opencageGeocoding(location)
-			res.json({ locationData })
+			const { lat, lng } = locationData.results[0].geometry
+			const forecast = await darkSky({ lat, lng })
+			res.json({ forecast })
 		} catch (err) {
 			next(err)
 		}
