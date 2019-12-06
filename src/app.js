@@ -25,7 +25,9 @@ const errorHandling = (err, _req, res, _next) => {
 }
 
 app.use(errorHandling)
+app.use(express.static('public'))
 const port = process.env.PORT || 3000
+
 app.listen(port, (err) => {
 	if (err) {
 		process.exit(1) // https://stackoverflow.com/questions/43147330/what-is-difference-between-method-process-exit1-and-process-exit0-in-node-js
